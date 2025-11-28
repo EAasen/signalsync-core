@@ -86,8 +86,36 @@ We welcome contributions from the community\!
 
 -----
 
+-----
+
+## 📋 Development Roadmap & Issues
+
+### 🎯 View All Epics & Issues
+
+- **[📊 GitHub Issues](https://github.com/EAasen/signalsync-core/issues)** - All 73+ issues in the issue tracker
+- **[📈 GitHub Projects](https://github.com/EAasen/signalsync-core/projects)** - Kanban board for visual tracking
+- **[📋 Epics Overview](.github/EPICS-OVERVIEW.md)** - High-level roadmap with all 10 development epics
+- **[📝 Create Issues Guide](.github/CREATE-ISSUES.md)** - How to bulk-create issues
+- **[🗺️ Product Roadmap](./docs/ROADMAP.md)** - Business context and milestones
+- **[🏗️ Project Structure](./docs/PROJECT-STRUCTURE.md)** - Technical architecture and monorepo layout
+
+### Quick Links to Epic Details
+
+- [Epic 1: Monitoring Engine (Core)](.github/issues/EPIC-1-MONITORING-ENGINE.md) - HTTP/HTTPS/TCP monitoring
+- [Epic 2: Multi-Tenancy & Agency Management](.github/issues/EPIC-2-MULTI-TENANCY.md) - Organization hierarchy and RLS
+- [Epic 3-5: Status Pages, Notifications, & SaaS Features](.github/issues/EPIC-3-4-5-STATUS-NOTIFICATIONS-SAAS.md) - Public pages and white-labeling
+
+### Current Development Status
+
+**Phase:** Phase 0 - Foundation  
+**Next Milestone:** Phase 1 - Community Edition MVP (March 2026)
+
+See [ROADMAP.md](./docs/ROADMAP.md) for detailed timeline and success metrics.
+
+-----
+
 ## ⏭️ Next Step
 
-[cite\_start]The next logical step would be to define the database schema and RLS policies, which are the security foundation of the multi-tenant architecture[cite: 393, 411, 426].
+The next logical step is to implement the **database schema and RLS policies**, which form the security foundation of the multi-tenant architecture.
 
-[cite\_start]Would you like me to generate the initial **Supabase PostgreSQL Schema** (Organizations, Projects, Monitors) and the core **Row Level Security (RLS) policies** based on the technical blueprint[cite: 391]?
+👉 **See [Epic 2, Issue #10](.github/issues/EPIC-2-MULTI-TENANCY.md#issue-10-database-schema-design)** for the complete schema design and implementation guide.

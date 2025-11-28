@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.web
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    depends_on:
+      - worker
+    volumes:
+      - ../apps/web:/app/apps/web
+      - /app/node_modules
+      - /app/apps/web/node_modules
+    command: pnpm --filter @signalsync/web dev
+
+  worker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.worker
+    environment:
+      - SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - WORKER_CHECK_INTERVAL_MS=60000
+      - WORKER_CONCURRENCY=10
+      - LOG_LEVEL=info
+    volumes:
+      - ../apps/worker:/app/apps/worker
+      - /app/node_modules
+      - /app/apps/worker/node_modules
+    command: pnpm --filter @signalsync/worker dev
+    restart: unless-stopped
+
+networks:
+  default:
+    name: signalsync-network

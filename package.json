@@ -1,0 +1,38 @@
+{
+  "name": "signalsync-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The agency-first status page platform - Open Core multi-tenant uptime monitoring",
+  "license": "BSL-1.1",
+  "author": "SignalSync Team",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "test:watch": "turbo run test:watch",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "db:migrate": "pnpm --filter @signalsync/database migrate",
+    "db:migrate:create": "pnpm --filter @signalsync/database migrate:create",
+    "db:generate-types": "pnpm --filter @signalsync/database generate-types",
+    "db:reset": "pnpm --filter @signalsync/database reset"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "prettier": "^3.1.0",
+    "turbo": "^1.11.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.12.0"
+}
