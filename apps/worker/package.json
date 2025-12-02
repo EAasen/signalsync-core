@@ -16,6 +16,7 @@
     "@signalsync/database": "workspace:*",
     "@signalsync/types": "workspace:*",
     "@signalsync/logger": "workspace:*",
+    "@supabase/supabase-js": "^2.39.0",
     "axios": "^1.6.2",
     "bullmq": "^5.0.0",
     "dotenv": "^16.3.1",
@@ -23,8 +24,6 @@
     "node-cron": "^3.0.3"
   },
   "devDependencies": {
-    "@signalsync/config-eslint": "workspace:*",
-    "@signalsync/config-typescript": "workspace:*",
     "@types/node": "^20.10.0",
     "@types/node-cron": "^3.0.11",
     "tsx": "^4.7.0",

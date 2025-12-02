@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -10,21 +12,21 @@ export default function HomePage() {
         </p>
         <div className="space-y-4">
           <p className="text-gray-500">
-            Development in progress...
+            Open Core multi-tenant uptime monitoring
           </p>
           <div className="flex gap-4 justify-center">
-            <a
-              href="/dashboard"
+            <Link
+              href="/signup"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             >
-              Go to Dashboard
-            </a>
-            <a
+              Get Started
+            </Link>
+            <Link
               href="/login"
               className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
             >
-              Login
-            </a>
+              Sign In
+            </Link>
           </div>
         </div>
       </div>
